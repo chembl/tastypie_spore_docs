@@ -69,6 +69,9 @@ def generate_spore_endpoint(request, api, name, version):
                     canonical_url = canonical_url[:canonical_url.find(':')] + '/'.join([':' + x for x in required_params])
                 method_data = {
                     "method" : verb.upper(),
+                    "resource_name": resource_name,
+                    "collection_name": resource._meta.collection_name,
+                    "default_format": resource._meta.default_format,
                     "description": description,
                     "path" : canonical_url,
                     "required_params": required_params,

@@ -12,7 +12,7 @@ except ImportError:
 
 setup(
     name='tastypie_spore_docs',
-    version='0.1.2',
+    version='0.1.4',
     author='Michal Nowotka',
     author_email='mnowotka@ebi.ac.uk',
     description='This Django app generates SPORE endpoint from Tastypie REST API and provides a JavaScript based SPORE client.',
@@ -24,7 +24,7 @@ setup(
         'django-tastypie',
     ],
     include_package_data=True,
-    classifiers=['Development Status :: 2 - Pre-Alpha',
+    classifiers=['Development Status :: 3 - Alpha',
                  'Environment :: Web Environment',
                  'Framework :: Django',
                  'Intended Audience :: Developers',
