@@ -124,6 +124,7 @@ var spore = {
         var description = apifunction.description;
         var defaults = apifunction.defaults;
         var required_params = apifunction.required_params;
+        var schema = apifunction.schema;
         var formats = apifunction.formats;
 
         params[required_params]='';
@@ -202,6 +203,8 @@ var spore = {
         method_widget.append('<p><h4>Description</h4><div class="well" id="'+fn+'_method_description"></div></p>');
 
         $('#'+fn+'_method_description').html(markdown.toHTML(description));
+
+        method_widget.append('<p><h4>Schema</h4><div class="well"><a href="' + schema + '">' + schema + '<a/></div></p>');
 
         if(required_params && required_params.length){
             method_widget.append('<p><h4>Requires</h4><div class="well">'+required_params+'</div></p>');

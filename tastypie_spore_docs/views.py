@@ -31,7 +31,9 @@ def generate_spore_endpoint(request, api, name, version):
         required_params_dict = None
         if hasattr(resource._meta, 'required_params'):
             required_params_dict = resource._meta.required_params
-            print required_params_dict
+        description_dict = {}
+        if hasattr(resource._meta, 'description'):
+            description_dict = resource._meta.description
         request = factory.get(schema_url)
         request.format = 'json'
         schema = resource.get_schema(request)
@@ -54,15 +56,15 @@ def generate_spore_endpoint(request, api, name, version):
                 method_name = verb.upper() + '_' + resource_name + '_' + type
                 canonical_url = schema_url[:schema_url.find('/schema') + 1]
                 if type == 'api_dispatch_list':
-                    description = "Retrieve " + resource_name + " object list."
+                    description = description_dict.get(type, "Retrieve " + resource_name + " object list.")
                     required_params = []
                 elif type == 'api_dispatch_detail':
                     canonical_url += ':ID'
-                    description = "Retrieve single " + resource_name + " object details by ID."
+                    description = description_dict.get(type, "Retrieve single " + resource_name + " object details by ID.")
                     required_params = ['ID']
                 elif type == 'api_get_multiple':
                     canonical_url += 'set/:IDs_list'
-                    description = "Retrieve multiple " + resource_name + " objects by IDs."
+                    description = description_dict.get(type, "Retrieve multiple " + resource_name + " objects by IDs.")
                     required_params = ['IDs_list']
                 if required_params_dict:
                     required_params = required_params_dict.get(type, required_params)
@@ -70,6 +72,7 @@ def generate_spore_endpoint(request, api, name, version):
                 method_data = {
                     "method" : verb.upper(),
                     "resource_name": resource_name,
+                    "schema": schema_url,
                     "collection_name": resource._meta.collection_name,
                     "default_format": resource._meta.default_format,
                     "description": description,
