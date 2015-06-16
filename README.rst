@@ -1,6 +1,26 @@
 tastypie_spore_docs
 ======
 
+.. image:: https://pypip.in/version/tastypie_spore_docs/badge.svg
+    :target: https://pypi.python.org/pypi/tastypie_spore_docs/
+    :alt: Latest Version
+
+.. image:: https://pypip.in/download/tastypie_spore_docs/badge.svg
+    :target: https://pypi.python.org/pypi/tastypie_spore_docs/
+    :alt: Downloads
+
+.. image:: https://pypip.in/py_versions/tastypie_spore_docs/badge.svg
+    :target: https://pypi.python.org/pypi/tastypie_spore_docs/
+    :alt: Supported Python versions
+
+.. image:: https://pypip.in/status/tastypie_spore_docs/badge.svg
+    :target: https://pypi.python.org/pypi/tastypie_spore_docs/
+    :alt: Development Status
+
+.. image:: https://pypip.in/license/tastypie_spore_docs/badge.svg
+    :target: https://pypi.python.org/pypi/tastypie_spore_docs/
+    :alt: License
+
 This is tastypie_spore_docs package developed at Chembl group, EMBL-EBI, Cambridge, UK.
 
 This package generates live online documentation as a SPORE client from the tastypie REST endpoint.
