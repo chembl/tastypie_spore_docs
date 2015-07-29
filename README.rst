@@ -1,25 +1,26 @@
 tastypie_spore_docs
 ======
 
-.. image:: https://pypip.in/version/tastypie_spore_docs/badge.svg
+.. image:: https://img.shields.io/pypi/v/tastypie_spore_docs.svg
     :target: https://pypi.python.org/pypi/tastypie_spore_docs/
     :alt: Latest Version
 
-.. image:: https://pypip.in/download/tastypie_spore_docs/badge.svg
+.. image:: https://img.shields.io/pypi/dm/tastypie_spore_docs.svg
     :target: https://pypi.python.org/pypi/tastypie_spore_docs/
     :alt: Downloads
 
-.. image:: https://pypip.in/py_versions/tastypie_spore_docs/badge.svg
+.. image:: https://img.shields.io/pypi/pyversions/tastypie_spore_docs.svg
     :target: https://pypi.python.org/pypi/tastypie_spore_docs/
     :alt: Supported Python versions
 
-.. image:: https://pypip.in/status/tastypie_spore_docs/badge.svg
+.. image:: https://img.shields.io/pypi/status/tastypie_spore_docs.svg
     :target: https://pypi.python.org/pypi/tastypie_spore_docs/
     :alt: Development Status
 
-.. image:: https://pypip.in/license/tastypie_spore_docs/badge.svg
+.. image:: https://img.shields.io/pypi/l/tastypie_spore_docs.svg
     :target: https://pypi.python.org/pypi/tastypie_spore_docs/
     :alt: License
+
 
 This is tastypie_spore_docs package developed at Chembl group, EMBL-EBI, Cambridge, UK.
 
