@@ -46,10 +46,10 @@ def generate_spore_endpoint(request, api, name, version):
         #print available_methods
 
         for verb in ['get', 'post']:
-            for type in ['api_dispatch_list', 'api_dispatch_detail', 'api_get_multiple']:
+            for type in ['api_dispatch_list', 'api_dispatch_detail', 'api_get_multiple', 'api_get_search']:
                 if type not in available_methods:
                     continue
-                if type in ('api_dispatch_list','api_get_multiple') and verb not in allowed_list_http_methods:
+                if type in ('api_dispatch_list','api_get_multiple', 'api_get_search') and verb not in allowed_list_http_methods:
                     continue
                 elif type == 'api_dispatch_detail' and verb not in allowed_detail_http_methods:
                     continue
@@ -66,6 +66,10 @@ def generate_spore_endpoint(request, api, name, version):
                     canonical_url += 'set/:IDs_list'
                     description = description_dict.get(type, "Retrieve multiple " + resource_name + " objects by IDs.")
                     required_params = ['IDs_list']
+                elif type == 'api_get_search':
+                    canonical_url += 'search?q=:query'
+                    description = description_dict.get(type, "Search " + resource_name + " using query string.")
+                    required_params = ['query']
                 if required_params_dict:
                     required_params = required_params_dict.get(type, required_params)
                     canonical_url = canonical_url[:canonical_url.find(':')] + '/'.join([':' + x for x in required_params])

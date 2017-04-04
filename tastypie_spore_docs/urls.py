@@ -1,7 +1,7 @@
 __author__ = 'mnowotka'
 
 from importlib import import_module
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from tastypie_spore_docs.direct_template_view import DirectTemplateView
@@ -29,7 +29,7 @@ try:
 except AttributeError:
     version = api_name
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'^%s/docs' % api_name, DirectTemplateView.as_view(template_name="docs.html"), name='ws_docs'),
     url(r'^%s/spore' % api_name, generate_spore_endpoint, {'api': api, 'name': name, 'version':version}, name='ws_spore_endpoint'),
-)
+]

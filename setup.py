@@ -11,8 +11,8 @@ except ImportError:
     from setuptools import setup
 
 setup(
-    name='tastypie_spore_docs',
-    version='0.1.5',
+    name='tastypie-spore-docs',
+    version='0.1.9',
     author='Michal Nowotka',
     author_email='mnowotka@ebi.ac.uk',
     description='This Django app generates SPORE endpoint from Tastypie REST API and provides a JavaScript based SPORE client.',
